@@ -14,7 +14,6 @@ AGENT_INFO = {
 }
 
 
-# Register agent on startup
 @app.on_event("startup")
 def register_agent():
 
@@ -24,7 +23,6 @@ def register_agent():
     )
 
 
-# Task execution
 @app.post("/agent/task")
 def execute_task(task: TaskRequest):
 
