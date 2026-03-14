@@ -1,12 +1,19 @@
 from pydantic import BaseModel
 from typing import Dict, Any
 
+
+class AgentRegistration(BaseModel):
+    agent_id: str
+    name: str
+    endpoint: str
+
+
 class TaskRequest(BaseModel):
     message_id: str
     sender: str
     receiver: str
-    type: str
-    task: Dict[str, Any]
+    task: str
+    input: Dict[str, Any]
 
 
 class TaskResponse(BaseModel):
